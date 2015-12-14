@@ -76,7 +76,7 @@
     $(function() {
         var editor = ace.edit("ccm-block-code-snippet-content-value");
         editor.setTheme("ace/theme/eclipse");
-        editor.getSession().setMode("ace/mode/html");
+        editor.getSession().setMode("ace/mode/text");
         refreshTextarea(editor.getValue());
         editor.getSession().on('change', function() {
             refreshTextarea(editor.getValue());
