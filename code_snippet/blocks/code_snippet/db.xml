@@ -9,6 +9,8 @@
       <key/>
     </field>
     <field name="content" type="text"/>
+    <field name="language" type="string" size="20"/>
+    <field name="theme" type="string" size="20"/>
   </table>
 
 </schema>

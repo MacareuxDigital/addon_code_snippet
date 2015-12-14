@@ -8,7 +8,7 @@ class Controller extends \Concrete\Core\Package\Package
 {
     protected $pkgHandle = 'code_snippet';
     protected $appVersionRequired = '5.7.5';
-    protected $pkgVersion = '0.1';
+    protected $pkgVersion = '0.9';
     
     public function getPackageName()
     {
@@ -23,7 +23,17 @@ class Controller extends \Concrete\Core\Package\Package
     public function install()
     {
         $pkg = parent::install();
-        $bt = BlockType::installBlockTypeFromPackage('code_snippet', $pkg);
+        $bt = BlockType::installBlockType('code_snippet', $pkg);
+        $btSet = BlockTypeSet::getByHandle('basic');
+        if (is_object($bt) && is_object($btSet)) {
+            $btSet->addBlockType($bt);
+        }
+    }
+    
+    public function upgrade()
+    {
+        parent::upgrade();
+        $bt = BlockType::getByHandle('code_snippet');
         $btSet = BlockTypeSet::getByHandle('basic');
         if (is_object($bt) && is_object($btSet)) {
             $btSet->addBlockType($bt);
