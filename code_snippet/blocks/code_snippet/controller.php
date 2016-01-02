@@ -1,6 +1,7 @@
 <?php
 namespace Concrete\Package\CodeSnippet\Block\CodeSnippet;
 
+use Concrete\Core\Asset\Asset;
 use Concrete\Core\Asset\AssetList;
 use Concrete\Core\Block\BlockController;
 use Core;
@@ -45,7 +46,9 @@ class Controller extends BlockController
             'javascript-inline',
             'highlightjsinit',
             'hljs.initHighlightingOnLoad();',
-            array(),
+            array(
+                'position' => Asset::ASSET_POSITION_FOOTER
+            ),
             'code_snippet'
         );
         $al->registerGroup('highlightjs', array(

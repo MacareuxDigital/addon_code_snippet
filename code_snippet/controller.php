@@ -8,7 +8,7 @@ class Controller extends \Concrete\Core\Package\Package
 {
     protected $pkgHandle = 'code_snippet';
     protected $appVersionRequired = '5.7.5';
-    protected $pkgVersion = '0.9';
+    protected $pkgVersion = '0.9.1';
     
     public function getPackageName()
     {
