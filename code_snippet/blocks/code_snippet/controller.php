@@ -95,4 +95,12 @@ class Controller extends BlockController
     {
         return $this->content;
     }
+
+    public function save($data)
+    {
+        $args['content'] = isset($data['content']) ? $data['content'] : '';
+        $args['language'] = isset($data['language']) ? $data['language'] : '';
+        $args['theme'] = isset($data['theme']) ? $data['theme'] : '';
+        parent::save($args);
+    }
 }
