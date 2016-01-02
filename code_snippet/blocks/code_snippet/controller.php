@@ -43,18 +43,14 @@ class Controller extends BlockController
             ), 'code_snippet'
         );
         $al->register(
-            'javascript-inline',
-            'highlightjsinit',
-            'hljs.initHighlightingOnLoad();',
-            array(
-                'position' => Asset::ASSET_POSITION_FOOTER
-            ),
-            'code_snippet'
+            'javascript', 'highlightjsinit', 'js/init_highlight.js', array(
+                'minify' => true, 'combine' => true
+            ), 'code_snippet'
         );
         $al->registerGroup('highlightjs', array(
             array('css', 'highlightjs'),
             array('javascript', 'highlightjs'),
-            array('javascript-inline', 'highlightjsinit'),
+            array('javascript', 'highlightjsinit'),
         ));
         $al->register(
             'javascript', 'typeaheadjs', 'js/typeahead.js', array(
